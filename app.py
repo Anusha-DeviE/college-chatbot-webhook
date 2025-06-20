@@ -20,7 +20,8 @@ data = {
     "hostel": "Yes, hostel facilities are available for all programs."
 }
 
-classifier = pipeline("zero-shot-classification")
+classifier = pipeline("zero-shot-classification", model="valhalla/distilbart-mnli-12-3")
+
 intent_labels = ["fees", "admission", "placement", "duration", "hostel"]
 
 @app.route("/webhook", methods=["POST"])
